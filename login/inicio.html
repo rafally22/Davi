@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Estoque</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <!-- FontAwesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <!-- Seu CSS personalizado -->
+  <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+  <div class="d-flex">
+ <!-- SIDEBAR -->
+ <nav id="sidebar">
+  <ul>
+    <!-- Botão de toggle -->
+    <li>
+      <button onclick="toggleSidebar()" id="toggle-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </li>
+
+    <!-- Cabeçalho -->
+    <li class="section-title">
+      <a href="#">
+        <i class="fas fa-boxes"></i>
+        <span>Menu</span>
+      </a>
+    </li>
+
+    <li class="section-subtitle">
+      <small>Entrada e Saída de Produtos</small>
+    </li>
+
+    <!-- Início -->
+    <li class="active">
+      <a href="#"><i class="fas fa-home"></i><span>Início</span></a>
+    </li>
+
+    <!-- Categorias com submenu -->
+    <li>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <i class="fas fa-tags"></i><span>Categorias</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <ul class="sub-menu">
+        <div>
+          <li><a href="#">Carnes</a></li>
+          <li><a href="#">Aves</a></li>
+          <li><a href="#">Bebidas</a></li>
+        </div>
+      </ul>
+    </li>
+
+    <!-- Fornecedores -->
+    <li>
+      <a href="#"><i class="fas fa-truck"></i><span>Fornecedores</span></a>
+    </li>
+
+    <!-- Movimentação -->
+    <li class="section-subtitle">
+      <hr>
+      <small>Movimentação</small>
+    </li>
+    <li><a href="#"><i class="fas fa-sign-in-alt"></i><span>Entradas</span></a></li>
+    <li><a href="#"><i class="fas fa-sign-out-alt"></i><span>Saídas</span></a></li>
+
+    <!-- Administração -->
+    <li class="section-subtitle">
+      <hr>
+      <small>Administração</small>
+    </li>
+    <li><a href="#"><i class="fas fa-user"></i><span>Usuários</span></a></li>
+    <li><a href="#"><i class="fas fa-file-alt"></i><span>Logs de Atividades</span></a></li>
+  </ul>
+</nav>
+
+
+      <!-- Cards -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card card-blue">
+              <div class="card-body">
+                <h5>4 Produtos Cadastrados</h5>
+                <p>19 Itens no Estoque</p>
+                <a href="#">Ver Relação de Produtos <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card card-red">
+              <div class="card-body">
+                <h5>2 Produtos Com Estoque Zerado</h5>
+                <a href="#">Ver Produtos Estoque Zerado <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card card-yellow">
+              <div class="card-body">
+                <h5>3 Produtos Com Estoque Mínimo</h5>
+                <a href="#">Ver Produtos Estoque Mínimo <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card card-green">
+              <div class="card-body">
+                <h5>Investimento: R$ 517,00</h5>
+                <p>Retorno Previsto: R$ 1.412,35</p>
+                <small>Margem de Lucro: 63,39%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráficos (placeholders) -->
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6>Entradas e Saídas Últimos 10 Dias</h6>
+                <div id="chart-entrada-saida" class="chart-placeholder">
+                  [Gráfico de Linhas]
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6>Atividades no Sistema Últimos 10 Dias</h6>
+                <div id="chart-atividades" class="chart-placeholder">
+                  [Gráfico de Atividades]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.container-fluid -->
+    </div> <!-- /#content -->
+  </div> <!-- /.d-flex -->
+
+  <!-- JS do Bootstrap e dependências -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- aqui você incluiria Chart.js ou outra lib de gráficos -->
+  <script src="inicio.js"></script>
+</body>
+</html>
